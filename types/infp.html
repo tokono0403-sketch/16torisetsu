@@ -1780,40 +1780,52 @@ INFPは、理解されると<br>
 静かに、でも確実に世界を良くする。
 </p>
 
-<hr>
+  <hr>
 
- <nav class="page-footer">
-      <p id="eros-text"></p>
-      <p class="footer-eros">
-        <a id="eros-link" href="">トリセツ【R18】</a>
-      </p>
-    </nav>
-    <!-- ▲▲ ここまでコピペで共通 ▲▲ -->
+  <nav class="page-footer">
+    <p class="footer-caption">
+      ここに書いてあるのは、<br>
+      あなたのタイプの「構造」です。<br>
+      <br>
+      でも、<br>
+      それが現実の人間関係や仕事の中で<br>
+      どう使われ、どこでズレていくのかまでは、<br>
+      まだ触れていません。<br>
+      <br>
+      もし、<br>
+      「じゃあ自分はどこでつまずきやすいんだろう？」<br>
+      と感じた人へ。
+    </p>
+    <p class="footer-eros">
+      <!-- JSでテキスト＆リンクを上書きする -->
+      <a id="type-guide-link" href="#">このタイプの日常トリセツ</a>
+    </p>
+  </nav>
+
 
   </main>
 
-  <script>
-  (function () {
-    // ファイル名からタイプ取得（infp.html → INFP）
-    const path = window.location.pathname;
-    const match = path.match(/([a-z]{4})\.html$/i);
-    if (!match) return;
+    <script>
+    (function () {
+      // URL からファイル名を取得（例: /types/infp.html → infp）
+      const path = window.location.pathname;
+      const match = path.match(/\/([a-z]{4})\.html$/i);
+      if (!match) return;
 
-    const typeLower = match[1].toLowerCase(); // infp
-    const typeUpper = match[1].toUpperCase(); // INFP
+      const typeCode = match[1].toLowerCase();  // infp
+      const typeUpper = typeCode.toUpperCase(); // INFP
 
-    const textEl = document.getElementById("eros-text");
-    const linkEl = document.getElementById("eros-link");
-    if (!textEl || !linkEl) return;
+      const linkEl = document.getElementById("type-guide-link");
+      if (!linkEl) return;
 
-    // フッターの説明文
-    textEl.textContent = `${typeUpper} の性にまつわる性癖トリセツ`;
+      // ボタンの表示テキストをタイプにあわせて更新
+      linkEl.textContent = typeUpper + " のトリセツ";
 
-    // ぜんぶ eros/index.html に集約
-    linkEl.href = `../eros/index.html?type=${typeLower}`;
-  })();
+      // 低額インデックスへのリンク
+      // 例: /guide/index.html#infp に飛ばす
+      linkEl.href = "/guide/index.html#" + typeCode;
+    })();
   </script>
-
 
 </body>
 </html>
