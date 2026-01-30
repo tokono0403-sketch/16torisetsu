@@ -1,0 +1,124 @@
+/* =========================
+   基本設定
+   ========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+  color: #222;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+}
+
+/* =========================
+   レイアウト
+   ========================= */
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 20px 80px;
+}
+
+/* =========================
+   見出し
+   ========================= */
+
+h1 {
+  font-size: 2rem;
+  font-weight: normal;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: normal;
+  margin-top: 5rem;
+  margin-bottom: 1.2rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  font-weight: normal;
+  margin-top: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+/* =========================
+   本文
+   ========================= */
+
+p {
+  font-size: 0.95rem;
+  margin: 0 0 1.2rem 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+/* =========================
+   リスト
+   ========================= */
+
+ul {
+  margin: 0 0 1.5rem 0;
+  padding-left: 1.4rem;
+}
+
+li {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+
+/* =========================
+   区切り線
+   ========================= */
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 5rem 0;
+}
+
+/* =========================
+   リンク（将来用）
+   ========================= */
+
+a {
+  color: #222;
+  text-decoration: underline;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* =========================
+   モバイル調整
+   ========================= */
+
+@media (max-width: 600px) {
+  main {
+    padding: 36px 16px 64px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  h2 {
+    font-size: 1.15rem;
+  }
+
+  p,
+  li {
+    font-size: 0.9rem;
+  }
+}
