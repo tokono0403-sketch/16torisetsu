@@ -6,7 +6,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -53,13 +54,13 @@ body.home main {
 
 h1 {
   font-size: 2.2rem;
-  font-weight: 600;
+  font-weight: 500;   /* ← ちょい軽めにして前の雰囲気に寄せる */
   margin-bottom: 1.5rem;
 }
 
 h2 {
   font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 700;          /* 太字で章として立たせる */
   margin-top: 6rem;
   margin-bottom: 1.5rem;
   letter-spacing: 0.04em;
@@ -108,9 +109,9 @@ hr {
 .type-form {
   margin: 2rem 0 1rem;
   display: flex;
-  flex-direction: column;   /* 入力→ボタンを縦並び */
+  flex-direction: column;   /* 入力 → ボタンを縦並び */
   align-items: center;
-  gap: 1rem;                /* 入力とボタンの余白 */
+  gap: 1.6rem;              /* 入力欄とボタンの間にしっかり余白 */
 }
 
 .type-form input[type="text"] {
@@ -121,7 +122,7 @@ hr {
   min-width: 190px;
   text-align: center;
   text-transform: uppercase;  /* 見た目も大文字に */
-  letter-spacing: 0.15em;     /* タイプ名をカチッと */
+  letter-spacing: 0.15em;     /* タイプ名をカチッと見せる */
 }
 
 .type-button {
@@ -132,7 +133,7 @@ hr {
   background: #222;
   color: #fff;
   cursor: pointer;
-  letter-spacing: 0.2em;      /* 「トリセツ」を少し広げる */
+  letter-spacing: 0.2em;      /* 「トリセツ」の文字間を少し広げる */
 }
 
 .type-button:hover {
