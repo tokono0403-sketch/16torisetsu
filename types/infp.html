@@ -1782,35 +1782,15 @@ INFPは、理解されると<br>
 
   <hr>
 
-<nav class="page-footer">
-  <p id="eros-text"></p>
-  <p class="footer-eros">
-    <a id="eros-link" href="#">トリセツ【R18】</a>
-  </p>
-</nav>
+  <nav class="page-footer">
+      <p>{TYPE} の性にまつわる性癖トリセツ</p>
+      <p class="footer-eros">
+        <a href="../eros/{type}.html">トリセツ【R18】</a>
+      </p>
+    </nav>
 
   </main>
   <script>
-  (function () {
-    // ファイル名からタイプを取得（例: infp.html → INFP）
-    const path = window.location.pathname;
-    const match = path.match(/\/([a-z]{4})\.html$/i);
-
-    if (!match) return;
-
-    const type = match[1].toUpperCase();
-
-    const textEl = document.getElementById("eros-text");
-    const linkEl = document.getElementById("eros-link");
-
-    if (!textEl || !linkEl) return;
-
-    // 文言を自動生成
-    textEl.textContent = `${type} の性にまつわる性癖トリセツ`;
-
-    // エロスページへのリンク
-    linkEl.href = `/eros/${type.toLowerCase()}.html`;
-  })();
 </script>
 
 </body>
