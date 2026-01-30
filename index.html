@@ -3,9 +3,65 @@
 <head>
   <meta charset="utf-8">
   <title>16トリセツ</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>16トリセツ</h1>
-  <p>⑯なんちゃらを知った「あと」の取扱説明書</p>
+  <main>
+    <h1>16トリセツ</h1>
+
+    <p>あなたのタイプを入れてください。</p>
+
+    <form id="type-form" class="type-form">
+      <input
+        type="text"
+        id="type-input"
+        name="type"
+        placeholder="例: INFP"
+        autocomplete="off"
+      >
+      <button type="submit">開く</button>
+    </form>
+
+    <p id="type-message" class="type-message"></p>
+  </main>
+
+  <script>
+    (function () {
+      const form = document.getElementById("type-form");
+      const input = document.getElementById("type-input");
+      const message = document.getElementById("type-message");
+
+      // 存在を許可するタイプ一覧（16タイプ）
+      const validTypes = [
+        "istj", "isfj", "infj", "intj",
+        "istp", "isfp", "infp", "intp",
+        "estp", "esfp", "enfp", "entp",
+        "estj", "esfj", "enfj", "entj"
+      ];
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const raw = (input.value || "").trim();
+        if (!raw) {
+          message.textContent = "タイプを入力してください。（例: INFP）";
+          return;
+        }
+
+        const normalized = raw.toLowerCase();
+
+        if (!validTypes.includes(normalized)) {
+          message.textContent = "16タイプのいずれかを英字4文字で入力してください。（例: INFP, INTJ, ENFP）";
+          return;
+        }
+
+        // メッセージ消す
+        message.textContent = "";
+
+        // 対応するページへ遷移
+        window.location.href = "types/" + normalized + ".html";
+      });
+    })();
+  </script>
 </body>
 </html>
