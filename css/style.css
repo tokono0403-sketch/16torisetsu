@@ -22,6 +22,27 @@ body {
   background: #fafafa;
 }
 
+.page-footer {
+  margin: 6rem 0 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.footer-eros a {
+  display: inline-block;
+  padding: 0.4rem 1.4rem;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+}
+
+.footer-eros a:hover {
+  opacity: 0.8;
+}
+
+
 /* =========================
    共通レイアウト
    ========================= */
