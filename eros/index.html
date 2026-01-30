@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>性癖トリセツ【R18】</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+<main>
+
+  <h1 id="eros-title"></h1>
+
+  <p class="lead">
+    ここは、性格タイプと「性」の関係を  
+    大人向けに深掘りするページです。
+  </p>
+
+  <hr>
+
+  <section id="eros-content">
+    <p>（ここにR18本文を書く）</p>
+  </section>
+
+  <hr>
+
+  <p class="footer-eros">
+    <a id="back-link" href="">← 元のトリセツに戻る</a>
+  </p>
+
+</main>
+
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const type = params.get("type");
+  if (!type) return;
+
+  const upper = type.toUpperCase();
+
+  // タイトル差し替え
+  const titleEl = document.getElementById("eros-title");
+  titleEl.textContent = `${upper} の性にまつわる性癖トリセツ【R18】`;
+
+  // 戻るリンク
+  const backLink = document.getElementById("back-link");
+  backLink.href = `../types/${type}.html`;
+})();
+</script>
+
+</body>
+</html>
