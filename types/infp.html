@@ -1780,18 +1780,41 @@ INFPは、理解されると<br>
 静かに、でも確実に世界を良くする。
 </p>
 
-  <hr>
+<hr>
 
-  <nav class="page-footer">
-      <p>{TYPE} の性にまつわる性癖トリセツ</p>
-      <p class="footer-eros">
-        <a href="../eros/{type}.html">トリセツ【R18】</a>
-      </p>
-    </nav>
+<nav class="page-footer">
+  <p id="eros-text"></p>
+  <p class="footer-eros">
+    <a id="eros-link" href="#">トリセツ【R18】</a>
+  </p>
+</nav>
+
 
   </main>
-  <script>
+<script>
+(function () {
+  // ファイル名からタイプ取得（例: infp.html）
+  const path = window.location.pathname;
+  const match = path.match(/([a-z]{4})\.html$/i);
+
+  if (!match) return;
+
+  const typeLower = match[1].toLowerCase();
+  const typeUpper = match[1].toUpperCase();
+
+  const textEl = document.getElementById("eros-text");
+  const linkEl = document.getElementById("eros-link");
+
+  if (!textEl || !linkEl) return;
+
+  // 表示テキスト
+  textEl.textContent = `${typeUpper} の性にまつわる性癖トリセツ`;
+
+  // リンク（types → eros）
+  linkEl.href = `../eros/${typeLower}.html`;
+})();
 </script>
+
 
 </body>
 </html>
