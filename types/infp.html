@@ -1783,49 +1783,36 @@ INFPは、理解されると<br>
   <hr>
 
   <nav class="page-footer">
-    <p class="footer-caption">
-      ここに書いてあるのは、<br>
-      あなたのタイプの「構造」です。<br>
-      <br>
-      でも、<br>
-      それが現実の人間関係や仕事の中で<br>
-      どう使われ、どこでズレていくのかまでは、<br>
-      まだ触れていません。<br>
-      <br>
-      もし、<br>
-      「じゃあ自分はどこでつまずきやすいんだろう？」<br>
-      と感じた人へ。
-    </p>
+    <p id="guide-text"></p>
     <p class="footer-eros">
-      <!-- JSでテキスト＆リンクを上書きする -->
-      <a id="type-guide-link" href="#">このタイプの日常トリセツ</a>
+      <a id="guide-link" href="#">タイプ別トリセツへ</a>
     </p>
   </nav>
 
+</main>
 
-  </main>
+<script>
+  (function () {
+    // /types/infp.html → infp
+    const path = window.location.pathname;
+    const match = path.match(/\/([a-z]{4})\.html$/i);
+    if (!match) return;
 
-    <script>
-    (function () {
-      // URL からファイル名を取得（例: /types/infp.html → infp）
-      const path = window.location.pathname;
-      const match = path.match(/\/([a-z]{4})\.html$/i);
-      if (!match) return;
+    const type = match[1].toUpperCase();
 
-      const typeCode = match[1].toLowerCase();  // infp
-      const typeUpper = typeCode.toUpperCase(); // INFP
+    const textEl = document.getElementById("guide-text");
+    const linkEl = document.getElementById("guide-link");
+    if (!textEl || !linkEl) return;
 
-      const linkEl = document.getElementById("type-guide-link");
-      if (!linkEl) return;
+    // フッターの文言（第一段階：低額トリセツ）
+    textEl.textContent = `${type} の現実トリセツ（誤作動と詰まりどころ）`;
 
-      // ボタンの表示テキストをタイプにあわせて更新
-      linkEl.textContent = typeUpper + " のトリセツ";
-
-      // 低額インデックスへのリンク
-      // 例: /guide/index.html#infp に飛ばす
-      linkEl.href = "/guide/index.html#" + typeCode;
-    })();
-  </script>
+    // タイプ別トリセツの該当セクションに飛ぶ
+    // types/index.html 内の section id="infp" にジャンプ
+    linkEl.href = `../types/index.html#${type.toLowerCase()}`;
+  })();
+</script>
 
 </body>
 </html>
+
