@@ -1782,38 +1782,37 @@ INFPは、理解されると<br>
 
 <hr>
 
-<nav class="page-footer">
-  <p id="eros-text"></p>
-  <p class="footer-eros">
-    <a id="eros-link" href="#">トリセツ【R18】</a>
-  </p>
-</nav>
-
+ <nav class="page-footer">
+      <p id="eros-text"></p>
+      <p class="footer-eros">
+        <a id="eros-link" href="">トリセツ【R18】</a>
+      </p>
+    </nav>
+    <!-- ▲▲ ここまでコピペで共通 ▲▲ -->
 
   </main>
-<script>
-(function () {
-  // ファイル名からタイプ取得（例: infp.html）
-  const path = window.location.pathname;
-  const match = path.match(/([a-z]{4})\.html$/i);
 
-  if (!match) return;
+  <script>
+  (function () {
+    // ファイル名からタイプ取得（infp.html → INFP）
+    const path = window.location.pathname;
+    const match = path.match(/([a-z]{4})\.html$/i);
+    if (!match) return;
 
-  const typeLower = match[1].toLowerCase();
-  const typeUpper = match[1].toUpperCase();
+    const typeLower = match[1].toLowerCase(); // infp
+    const typeUpper = match[1].toUpperCase(); // INFP
 
-  const textEl = document.getElementById("eros-text");
-  const linkEl = document.getElementById("eros-link");
+    const textEl = document.getElementById("eros-text");
+    const linkEl = document.getElementById("eros-link");
+    if (!textEl || !linkEl) return;
 
-  if (!textEl || !linkEl) return;
+    // フッターの説明文
+    textEl.textContent = `${typeUpper} の性にまつわる性癖トリセツ`;
 
-  // 表示テキスト
-  textEl.textContent = `${typeUpper} の性にまつわる性癖トリセツ`;
-
-  // リンク（types → eros）
-  linkEl.href = `../eros/${typeLower}.html`;
-})();
-</script>
+    // ぜんぶ eros/index.html に集約
+    linkEl.href = `../eros/index.html?type=${typeLower}`;
+  })();
+  </script>
 
 
 </body>
