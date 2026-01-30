@@ -21,8 +21,10 @@
         name="type"
         placeholder="例: INFP"
         autocomplete="off"
+        maxlength="4"
+        inputmode="latin"
       >
-      <button type="submit">トリセツ</button>
+      <button type="submit" class="type-button">トリセツ</button>
     </form>
 
     <p id="type-message" class="type-message"></p>
@@ -34,35 +36,40 @@
       const input = document.getElementById("type-input");
       const message = document.getElementById("type-message");
 
-      // 存在を許可するタイプ一覧（16タイプ）
       const validTypes = [
-        "istj", "isfj", "infj", "intj",
-        "istp", "isfp", "infp", "intp",
-        "estp", "esfp", "enfp", "entp",
-        "estj", "esfj", "enfj", "entj"
+        "ISTJ", "ISFJ", "INFJ", "INTJ",
+        "ISTP", "ISFP", "INFP", "INTP",
+        "ESTP", "ESFP", "ENFP", "ENTP",
+        "ESTJ", "ESFJ", "ENFJ", "ENTJ"
       ];
 
       form.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        const raw = (input.value || "").trim();
+        // 入力を大文字4文字に正規化
+        const raw = (input.value || "").trim().toUpperCase();
+        input.value = raw;  // 見た目も大文字にそろえる
+
         if (!raw) {
           message.textContent = "タイプを入力してください。（例: INFP）";
           return;
         }
 
-        const normalized = raw.toLowerCase();
-
-        if (!validTypes.includes(normalized)) {
-          message.textContent = "16タイプのいずれかを英字4文字で入力してください。（例: INFP, INTJ, ENFP）";
+        // A〜Z の4文字以外は弾く
+        if (!/^[A-Z]{4}$/.test(raw)) {
+          message.textContent = "英大文字4文字で入力してください。（例: INFP, INTJ, ENFP）";
           return;
         }
 
-        // メッセージ消す
+        if (!validTypes.includes(raw)) {
+          message.textContent = "16タイプのいずれかを入力してください。（例: INFP, INTJ, ENFP）";
+          return;
+        }
+
         message.textContent = "";
 
-        // 対応するページへ遷移
-        window.location.href = "types/" + normalized + ".html";
+        const filename = raw.toLowerCase(); // ファイル名は小文字 infp.html 想定
+        window.location.href = "types/" + filename + ".html";
       });
     })();
   </script>
