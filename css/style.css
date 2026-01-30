@@ -5,6 +5,7 @@
 .type-form {
   margin: 2rem 0 1rem;
   display: flex;
+  flex-direction: column;   /* ← 縦並びにする */
   gap: 0.5rem;
   flex-wrap: wrap;
 }
@@ -33,6 +34,29 @@
   font-size: 0.85rem;
   margin-top: 0.5rem;
 }
+
+/* =========================
+   トップページ（home）
+   ========================= */
+
+body.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.home main {
+  text-align: center;
+}
+
+.lead {
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+}
+
+
 
 
 /* =========================
