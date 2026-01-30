@@ -1,4 +1,41 @@
 /* =========================
+   フォーム（トップページ用）
+   ========================= */
+
+.type-form {
+  margin: 2rem 0 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.type-form input[type="text"] {
+  padding: 0.4rem 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  background: #fff;
+  min-width: 140px;
+}
+
+.type-form button {
+  padding: 0.4rem 1.2rem;
+  font-size: 0.95rem;
+  border: 1px solid #222;
+  background: #fff;
+  cursor: pointer;
+}
+
+.type-form button:hover {
+  opacity: 0.8;
+}
+
+.type-message {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+
+/* =========================
    基本設定
    ========================= */
 
