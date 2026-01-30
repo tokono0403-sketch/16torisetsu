@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>タイプ別トリセツ｜16トリセツ</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+<main>
+
+  <h1>タイプ別トリセツ</h1>
+
+  <p class="lead">
+    ここから先は、<br>
+    各タイプが<strong>現実の中でどう使われ、どこでズレていくか</strong>を扱います。<br>
+    <br>
+    性格説明ではありません。<br>
+    行動・人間関係・仕事の中で起きやすい<br>
+    <strong>誤作動と詰まりどころ</strong>のトリセツです。
+  </p>
+
+  <hr>
+
+  <div id="type-guide-list">
+    <!-- ここにJSでタイプ別セクションを自動生成する -->
+  </div>
+
+  <p class="footer-caption">
+    ※この先に進む必要はありません。<br>
+    無料ページの内容だけで十分な人は、<br>
+    ここで閉じて大丈夫です。
+  </p>
+
+</main>
+
+<script>
+  // ここで16タイプぶんの設定だけを書き換えればOK
+  const typeGuides = [
+    {
+      code: "infp",
+      label: "INFP",
+      price: 500,
+      status: "ready", // "ready" or "wip"
+      boothUrl: "https://booth.pm/ja/items/XXXXXXX", // INFP用BOOTH URLに差し替え
+      topics: [
+        "なぜ「分かってもらえない」と感じやすいのか",
+        "どこで自己評価が静かに削れていくのか",
+        "善意が消耗に変わる瞬間",
+        "壊れる直前に起きる内部変化",
+        "回復に必要な条件と時間感覚"
+      ]
+    },
+    {
+      code: "enfp",
+      label: "ENFP",
+      price: 500,
+      status: "wip",
+      boothUrl: "",
+      topics: []
+    },
+    {
+      code: "infj",
+      label: "INFJ",
+      price: 500,
+      status: "wip",
+      boothUrl: "",
+      topics: []
+    },
+    {
+      code: "intj",
+      label: "INTJ",
+      price: 500,
+      status: "wip",
+      boothUrl: "",
+      topics: []
+    },
+    // 必要になったらここに他タイプも足していけばOK
+    // { code: "entp", label: "ENTP", ... }
+  ];
+
+  (function () {
+    const container = document.getElementById("type-guide-list");
+    if (!container) return;
+
+    typeGuides.forEach((t, index) => {
+      const section = document.createElement("section");
+      section.id = t.code;
+
+      // 区切り線（最初のタイプの前だけ省略）
+      if (index > 0) {
+        const hr = document.createElement("hr");
+        container.appendChild(hr);
+      }
+
+      // 見出し
+      const h2 = document.createElement("h2");
+      h2.textContent = t.label + " のトリセツ";
+      section.appendChild(h2);
+
+      if (t.status === "ready") {
+        // トピック一覧
+        if (t.topics && t.topics.length > 0) {
+          const ul = document.createElement("ul");
+          t.topics.forEach(topic => {
+            const li = document.createElement("li");
+            li.textContent = topic;
+            ul.appendChild(li);
+          });
+          section.appendChild(ul);
+        }
+
+        // 価格＆形式
+        const pInfo = document.createElement("p");
+        pInfo.innerHTML = `価格：<strong>${t.price}円</strong><br>形式：PDF（ダウンロード）`;
+        section.appendChild(pInfo);
+
+        // 購入ボタン
+        const pBtn = document.createElement("p");
+        pBtn.className = "footer-eros";
+
+        const a = document.createElement("a");
+        a.textContent = t.label + " のトリセツを購入する";
+        a.href = t.boothUrl || "#";
+        pBtn.appendChild(a);
+
+        section.appendChild(pBtn);
+
+      } else {
+        // 準備中表示
+        const p = document.createElement("p");
+        p.textContent = "※準備中";
+        section.appendChild(p);
+      }
+
+      container.appendChild(section);
+    });
+  })();
+</script>
+
+</body>
+</html>
