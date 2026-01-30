@@ -37,11 +37,13 @@ h1 {
 }
 
 h2 {
-  font-size: 1.25rem;
-  font-weight: normal;
-  margin-top: 5rem;
-  margin-bottom: 1.2rem;
+  font-size: 1.3rem;        /* 少しだけ存在感アップ */
+  font-weight: 500;         /* normal → 500 で芯を出す */
+  margin-top: 6rem;         /* 前の章からしっかり距離 */
+  margin-bottom: 1.5rem;    /* 本文との呼吸 */
+  letter-spacing: 0.04em;   /* 見出し感を少しだけ */
 }
+
 
 h3 {
   font-size: 1.05rem;
